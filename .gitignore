@@ -2,3 +2,5 @@
 /out/
 /APS2020-1.iml
 /bin/
+!/.classpath
+!/.project
