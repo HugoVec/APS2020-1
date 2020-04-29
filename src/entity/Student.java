@@ -3,12 +3,18 @@ package entity;
 public class Student {
     private Integer id;
     private String name;
-    private String documentNumber;
+    private byte semestre;
+    private Curso curso;
 
-    public Student(Integer id, String name, String documentNumber) {
+    public Student() {
+        
+    }    
+    
+    public Student(Integer id, String name, byte semestre, Curso curso) {
         this.id = id;
         this.name = name;
-        this.documentNumber = documentNumber;
+        this.semestre = semestre;
+        this.curso = curso;
     }
 
     public Integer getId() {
@@ -27,11 +33,19 @@ public class Student {
         this.name = name;
     }
 
-    public String getDocumentNumber() {
-        return documentNumber;
+    public byte getSemestre() {
+        return semestre;
     }
 
-    public void setDocumentNumber(String documentNumber) {
-        this.documentNumber = documentNumber;
+    public void setSemestre(byte semestre) {
+        this.semestre = semestre;
     }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }   
 }
