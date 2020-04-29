@@ -41,7 +41,7 @@ public class CadastrarAluno extends JFrame {
 	 */
 	public CadastrarAluno() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 428, 527);
+		setBounds(100, 100, 422, 523);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
