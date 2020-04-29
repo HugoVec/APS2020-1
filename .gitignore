@@ -17,3 +17,13 @@ nbproject/private/private.properties
 nbproject/private/private.xml
 nbproject/project.properties
 nbproject/project.xml
+build/classes/.netbeans_automatic_build
+build/classes/.netbeans_update_resources
+build/classes/entity/Student.class
+build/classes/main/Main.class
+build/classes/parser/CSVParser.class
+build/classes/parser/StudentParserImpl.class
+build/classes/view/Main.class
+build/classes/view/menu/Menu.class
+build/classes/view/menu/MenuItem.class
+build/classes/view/menu/OnItemSelected.class
