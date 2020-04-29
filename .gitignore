@@ -4,3 +4,12 @@
 /bin/
 !/.classpath
 !/.project
+/build/
+build.xml
+manifest.mf
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/private/private.properties
+nbproject/private/private.xml
+nbproject/project.properties
+nbproject/project.xml
