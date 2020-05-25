@@ -23,7 +23,7 @@ public class AlunoModel {
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
         stmt.setString(1, aluno.getNome());
         stmt.setString(2, String.valueOf(aluno.getSexo()));
-        stmt.setShort(3, aluno.getIdade());
+        stmt.setInt(3, aluno.getIdade());
 
         return stmt.executeUpdate() > 0;
     }
@@ -49,7 +49,7 @@ public class AlunoModel {
                     rs.getInt("ID"),
                     documento,
                     rs.getString("NOME"),
-                    rs.getString("SEXO").charAt(0),
+                    rs.getString("SEXO"),
                     (short) rs.getInt("IDADE"));
         }
 
@@ -69,7 +69,7 @@ public class AlunoModel {
                     rs.getInt("ID"),
                     rs.getString("DOCUMENTO"),
                     rs.getString("NOME"),
-                    rs.getString("SEXO").charAt(0),
+                    rs.getString("SEXO"),
                     (short) rs.getInt("IDADE")));
         }
 

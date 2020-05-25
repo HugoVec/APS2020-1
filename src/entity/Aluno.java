@@ -10,15 +10,15 @@ public class Aluno implements IEntity {
     private Integer ID;
     private String documento;
     private String nome;
-    private char sexo;
-    private short idade;
+    private String sexo;
+    private int idade;
 
     private ArrayList<Matricula> matriculas;
     private ArrayList<Turma> turmas;
 
     public Aluno() {}
 
-    public Aluno(Integer ID, String documento, String nome, char sexo, short idade) {
+    public Aluno(Integer ID, String documento, String nome, String sexo, int idade) {
         this.ID = ID;
         this.documento = documento;
         this.nome = nome;
@@ -50,19 +50,19 @@ public class Aluno implements IEntity {
         this.nome = nome;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public short getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(short idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
