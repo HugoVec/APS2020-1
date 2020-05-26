@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Aluno implements IEntity {
+
     private Integer ID;
     private String documento;
     private String nome;
@@ -16,7 +17,8 @@ public class Aluno implements IEntity {
     private ArrayList<Matricula> matriculas;
     private ArrayList<Turma> turmas;
 
-    public Aluno() {}
+    public Aluno() {
+    }
 
     public Aluno(Integer ID, String documento, String nome, String sexo, int idade) {
         this.ID = ID;
@@ -99,4 +101,10 @@ public class Aluno implements IEntity {
     public boolean matricular(Matricula matricula) throws SQLException {
         return AlunoModel.matricular(matricula);
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + "\n" + "RA: " + documento + "\n";
+    }
+
 }

@@ -61,4 +61,12 @@ public class Curso implements IEntity {
     public boolean deletar() throws SQLException {
         return CursoModel.deletar(this);
     }
+    
+    
+    @Override
+    public String toString() {
+        return "Nome: " + nome + "\n" + "Mensalidade: " + mensalidade + "\n";
+    }
+    
+    
 }

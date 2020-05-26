@@ -24,6 +24,7 @@ public class AlunoModel {
         stmt.setString(1, aluno.getNome());
         stmt.setString(2, String.valueOf(aluno.getSexo()));
         stmt.setInt(3, aluno.getIdade());
+        stmt.setString(4, aluno.getDocumento());
 
         return stmt.executeUpdate() > 0;
     }
@@ -36,9 +37,18 @@ public class AlunoModel {
 
         return stmt.executeUpdate() > 0;
     }
+    
+    public static boolean deletar(String ra) throws SQLException {
+        String sql = "DELETE FROM ALUNO WHERE documento = ?";
+
+        PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
+        stmt.setString(1, ra);
+
+        return stmt.executeUpdate() > 0;
+    }
 
     public static Aluno encontrar(String documento) throws SQLException {
-        String sql = "SELECT * FROM ALUNO WHERE ID = ?";
+        String sql = "SELECT * FROM ALUNO WHERE documento = ?";
 
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
         stmt.setString(1, documento);
