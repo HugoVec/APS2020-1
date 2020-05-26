@@ -1,7 +1,6 @@
 package entity;
 
 import model.AlunoModel;
-import model.MatriculaModel;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,8 +13,16 @@ public class Aluno implements IEntity {
     private String sexo;
     private int idade;
 
-    private ArrayList<Matricula> matriculas;
-    private ArrayList<Turma> turmas;
+    private int curso;
+
+    public int getCurso() {
+        return curso;
+    }
+
+    public void setCurso(int curso) {
+        this.curso = curso;
+    }
+    
 
     public Aluno() {
     }
@@ -68,26 +75,6 @@ public class Aluno implements IEntity {
         this.idade = idade;
     }
 
-    public ArrayList<Matricula> getMatriculas() throws SQLException {
-        if (matriculas == null) {
-            matriculas = MatriculaModel.encontrarDoAluno(this);
-        }
-
-        return matriculas;
-    }
-
-    public void setMatriculas(ArrayList<Matricula> matriculas) {
-        this.matriculas = matriculas;
-    }
-
-    public ArrayList<Turma> getTurmas() {
-        return turmas;
-    }
-
-    public void setTurmas(ArrayList<Turma> turmas) {
-        this.turmas = turmas;
-    }
-
     @Override
     public boolean salvar() throws SQLException {
         return AlunoModel.salvar(this);
@@ -96,10 +83,6 @@ public class Aluno implements IEntity {
     @Override
     public boolean deletar() throws SQLException {
         return AlunoModel.deletar(this);
-    }
-
-    public boolean matricular(Matricula matricula) throws SQLException {
-        return AlunoModel.matricular(matricula);
     }
 
     @Override

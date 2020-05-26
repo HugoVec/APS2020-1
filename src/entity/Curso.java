@@ -10,8 +10,6 @@ public class Curso implements IEntity {
     private String nome;
     private Double mensalidade;
 
-    private ArrayList<Turma> turmas;
-
     public Curso() {}
     
     public Curso(Integer ID, String nome, Double mensalidade){
@@ -42,14 +40,6 @@ public class Curso implements IEntity {
 
     public void setMensalidade(Double mensalidade) {
         this.mensalidade = mensalidade;
-    }
-
-    public ArrayList<Turma> getTurmas() {
-        return turmas;
-    }
-
-    public void setTurmas(ArrayList<Turma> turmas) {
-        this.turmas = turmas;
     }
 
     @Override

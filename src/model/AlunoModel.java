@@ -2,8 +2,6 @@ package model;
 
 import entity.Aluno;
 import entity.Curso;
-import entity.Matricula;
-import entity.Turma;
 import jdbc.DatabaseConnection;
 
 import java.sql.PreparedStatement;
@@ -86,14 +84,4 @@ public class AlunoModel {
         return alunos;
     }
 
-    public static boolean matricular(Matricula matricula) throws SQLException {
-        String sql = "INSERT INTO MATRICULA (ID_ALUNO, ID_TURMA, DESCONTO) VALUES (?, ?, ?)";
-
-        PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
-        stmt.setInt(1, matricula.getAluno().getID());
-        stmt.setInt(2, matricula.getTurma().getID());
-        stmt.setDouble(3, matricula.getDesconto());
-
-        return stmt.executeUpdate() > 0;
-    }
 }

@@ -1,13 +1,14 @@
 package entity;
 
 public class Nota {
+
     private String nome;
     private String tipo;
 
-    private Matricula matricula;
     private Disciplina disciplina;
 
-    public Nota() {}
+    public Nota() {
+    }
 
     public Nota(String nome, String tipo) {
         this.nome = nome;
@@ -28,14 +29,6 @@ public class Nota {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public Matricula getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(Matricula matricula) {
-        this.matricula = matricula;
     }
 
     public Disciplina getDisciplina() {
