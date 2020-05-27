@@ -2,33 +2,57 @@ package entity;
 
 public class Nota {
 
-    private String nome;
-    private String tipo;
+    private Integer ID;
+    private int np1;
+    private int np2;
+    private int sub;
+    private int exame;
 
     private Disciplina disciplina;
 
     public Nota() {
     }
 
-    public Nota(String nome, String tipo) {
-        this.nome = nome;
-        this.tipo = tipo;
+    public int getNp1() {
+        return np1;
     }
 
-    public String getNome() {
-        return nome;
+    public void setNp1(int np1) {
+        this.np1 = np1;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public int getNp2() {
+        return np2;
     }
 
-    public String getTipo() {
-        return tipo;
+    public Integer getID() {
+        return ID;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setID(Integer ID) {
+        this.ID = ID;
+    }
+    
+    
+
+    public void setNp2(int np2) {
+        this.np2 = np2;
+    }
+
+    public int getSub() {
+        return sub;
+    }
+
+    public void setSub(int sub) {
+        this.sub = sub;
+    }
+
+    public int getExame() {
+        return exame;
+    }
+
+    public void setExame(int exame) {
+        this.exame = exame;
     }
 
     public Disciplina getDisciplina() {
