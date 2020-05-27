@@ -25,30 +25,29 @@ public class DiciplinaModel {
         return stmt.executeUpdate() > 0;
     }
 
-    public static boolean deletar(Disciplina diciplina) throws SQLException {
-        String sql = "DELETE FROM DICIPLINA WHERE ID = ?";
+    public static boolean deletar(String nomeDis) throws SQLException {
+        String sql = "DELETE FROM DICIPLINA WHERE nome = ?";
 
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
-        stmt.setInt(1, diciplina.getID());
+        stmt.setString(1, nomeDis);
 
         return stmt.executeUpdate() > 0;
     }
 
-    public static Disciplina encontrar(Curso id) throws SQLException {
-        String sql = "SELECT * FROM DICIPLINA WHERE ID_CURSO = ?";
+    public static Disciplina encontrar(String nomeDis) throws SQLException {
+        String sql = "SELECT * FROM DICIPLINA WHERE nome = ?";
 
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
-        stmt.setInt(1, id.getID());
+        stmt.setString(1, nomeDis);
 
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
             return new Disciplina(
-                    rs.getInt("ID_CURSO"));
-        }
-
+                    rs.getInt("ID"),
+                    rs.getString("NOME")
+            );
+        } 
         return null;
     }
 
-    
-    
 }
