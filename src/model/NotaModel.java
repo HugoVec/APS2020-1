@@ -28,20 +28,20 @@ public class NotaModel {
         return stmt.executeUpdate() > 0;
     }
 
-    public static boolean deletar(Nota nota) throws SQLException {
+    public static boolean deletar(String nota) throws SQLException {
         String sql = "DELETE FROM NOTA WHERE ID = ?";
 
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
-        stmt.setInt(1, nota.getID());
+        stmt.setString(1, nota);
 
         return stmt.executeUpdate() > 0;
     }
 
-    public static Nota encontrar(Nota id) throws SQLException {
+    public static Nota encontrar(String id) throws SQLException {
         String sql = "SELECT * FROM NOTA WHERE ID_ALUNO = ?";
 
         PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql);
-        stmt.setInt(1, id.getID());
+        stmt.setString(1, id);
 
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {

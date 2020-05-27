@@ -150,6 +150,10 @@ public class Main extends Application {
             break;
                 
             case 10:
+                System.out.println("QUAL O CURSO DA DISCIPLINA: ");
+                nomeC = scanner.next();
+                CursoModel.getCurso(nomeC);
+                System.out.println(CursoModel.getCurso(nomeC));
                 System.out.println("INFORME A DISPLINA A SER DELETADO: ");
                 nomeDis = scanner.next();
                 DiciplinaModel.deletar(nomeDis);
@@ -169,9 +173,11 @@ public class Main extends Application {
             break;
             
             case 12:
-                System.out.println("INFORME A DISCIPLINA AVALIADA: ");
+                System.out.println("INFORME O (RA) DO ALUNO: ");
+                ra = scanner.next();
+                System.out.println(AlunoModel.encontrar(ra));
+                System.out.println("INFORME A DISCIPLINA: ");
                 nomeDis = scanner.next();
-                DiciplinaModel.encontrar(nomeDis);
                 System.out.println(DiciplinaModel.encontrar(nomeDis));
                 System.out.println("INSIRA A NOTA (NP1): ");
                 int np1 = scanner.nextInt();
@@ -185,6 +191,44 @@ public class Main extends Application {
                 System.out.println("INSIRA A NOTA (EXAME): ");
                 int exame = scanner.nextInt();
                 nota.setExame(exame);
+                
+            break;
+            
+            case 13:
+                System.out.println("INFORME O (RA) DO ALUNO: ");
+                ra = scanner.next();
+                System.out.println(AlunoModel.encontrar(ra));
+                System.out.println("INFORME A DISCIPLINA: ");
+                nomeDis = scanner.next();
+                System.out.println(DiciplinaModel.encontrar(nomeDis));
+                System.out.println("ESCOLHA A NOTA A SER DELETADA: ");
+                String delNp1 = scanner.next();
+                NotaModel.deletar(delNp1);
+                String delNp2 = scanner.next();
+                NotaModel.deletar(delNp2);
+                String delSub = scanner.next();
+                NotaModel.deletar(delSub);
+                String delExe = scanner.next();
+                NotaModel.deletar(delExe);
+                
+            break;
+            
+            case 14:
+                System.out.println("INFORME O (RA) DO ALUNO: ");
+                ra = scanner.next();
+                System.out.println(AlunoModel.encontrar(ra));
+                System.out.println("INFORME A DISCIPLINA: ");
+                nomeDis = scanner.next();
+                System.out.println(DiciplinaModel.encontrar(nomeDis));
+                System.out.println("NOTAS DA DISCIPLINA");
+                String encNp1 = scanner.next();
+                System.out.println(NotaModel.encontrar(encNp1));
+                String encNp2 = scanner.next();
+                NotaModel.deletar(encNp2);
+                String encSub = scanner.next();
+                NotaModel.deletar(encSub);
+                String encExe = scanner.next();
+                NotaModel.deletar(encExe);
                 
             break;
                 
